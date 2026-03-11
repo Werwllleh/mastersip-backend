@@ -4,9 +4,9 @@ import { ConfigService } from '@nestjs/config';
 
 export interface SendLeadNotificationDto {
   name: string;
-  email: string;
   phone: string;
   message?: string;
+  privacyPolicyAccepted: boolean;
 }
 
 @Injectable()
@@ -36,9 +36,9 @@ export class MailService {
       html: `
         <h2>Новая заявка с сайта</h2>
         <p><strong>Имя:</strong> ${data.name}</p>
-        <p><strong>Email:</strong> ${data.email}</p>
         <p><strong>Телефон:</strong> ${data.phone}</p>
         ${data.message ? `<p><strong>Сообщение:</strong> ${data.message}</p>` : ''}
+        <p><strong>Согласие с политикой:</strong> ${data.privacyPolicyAccepted ? '✓ Принято' : '✗ Не принято'}</p>
         <p><em>Дата: ${new Date().toLocaleString('ru-RU')}</em></p>
       `,
     };
