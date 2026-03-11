@@ -1,6 +1,7 @@
 /.idea/
 QWEN.md
 .env
+.env.example
 
 /generated/prisma
 node_modules
