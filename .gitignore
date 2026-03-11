@@ -2,8 +2,14 @@
 QWEN.md
 .env
 .env.example
+.env.development
+ecosystem.config.cjs
+
 
 /generated/prisma
 node_modules
+logs/
+master-sip.ru.conf
 dist
 test
+
