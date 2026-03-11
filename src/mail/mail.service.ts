@@ -32,14 +32,14 @@ export class MailService {
     const mailOptions = {
       from: mailFrom,
       to: mailFrom,
-      subject: `Новая заявка от ${data.name}`,
+      subject: `sales.master-sip.ru`,
       html: `
-        <h2>Новая заявка с сайта</h2>
+        <h2>Новая заявка с сайта <a href="https://sales.master-sip.ru/" target="_blank">sales.master-sip.ru</a></h2>
         <p><strong>Имя:</strong> ${data.name}</p>
         <p><strong>Телефон:</strong> ${data.phone}</p>
         ${data.message ? `<p><strong>Сообщение:</strong> ${data.message}</p>` : ''}
         <p><strong>Согласие с политикой:</strong> ${data.privacyPolicyAccepted ? '✓ Принято' : '✗ Не принято'}</p>
-        <p><em>Дата: ${new Date().toLocaleString('ru-RU')}</em></p>
+        <p><em>Дата: ${new Date().toLocaleString('ru-RU', { timeZone: 'Europe/Moscow' })}</em></p>
       `,
     };
 
